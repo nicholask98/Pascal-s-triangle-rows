@@ -1,3 +1,4 @@
+'''
 def first_pascal_rows(num_rows):
     row_list_former = []
     row_list_current = []
@@ -11,22 +12,30 @@ def first_pascal_rows(num_rows):
             # 
 
         print(num_rows)
+'''
 
 
 
+num_rows = 8
 
+row_list_former = []
+row_list_current = []
 
+for row_num in range(num_rows):# FOR NEW ROWS
+    row_list_current.append(1)
+    for current_num in range(len(row_list_former) + 1): # FOR NUM IN CURRENT ROW
+        
+        if current_num == len(row_list_former):
+            row_list_current.append(1)
+            print(row_list_current) 
+            break
 
-first_pascal_rows(3)
+        row_list_current.append(row_list_former[current_num - 1] + row_list_former[current_num])
 
-# for each new number based on # from previous row
-
-# for i in range(num_rows)   // 0    # FOR NEW ROWS
-    # for current_num in range len(row_list_former + 1)    // 0    # FOR NUM IN CURRENT ROW
-#       if current_num == len(row_list_former):
-            # row_list_current[]
-#       row_list_current[current_num] = row_list_former[current_num - 1] + row_list_former[current_num] 
-
+      
+    row_list_former = row_list_current
+    row_list_current = []
+    
 
 
 
