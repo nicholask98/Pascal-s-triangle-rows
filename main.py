@@ -16,13 +16,12 @@ def first_pascal_rows(num_rows):
 
 
 
-num_rows = 8
+num_rows = int(input('enter whole number:\n'))
 
 row_list_former = []
 row_list_current = []
 
 for row_num in range(num_rows):# FOR NEW ROWS
-    row_list_current.append(1)
     for current_num in range(len(row_list_former) + 1): # FOR NUM IN CURRENT ROW
         
         if current_num == len(row_list_former):
