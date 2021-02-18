@@ -1,4 +1,4 @@
-def pascals_tri(num_rows):
+def pascals_tri(num_rows): # Function prints num_rows rows of pascal's triangle
     row_list_former = []
     row_list_current = []
     print(1)
@@ -6,12 +6,17 @@ def pascals_tri(num_rows):
         for current_num in range(len(row_list_former) + 1): # FOR NUM IN CURRENT ROW            
             if current_num == len(row_list_former):
                 row_list_current.append(1)
-                print(1, end = ' ')
+                print(1, end = ' ') # for printing the initial 1's for each row
+                print(' ' * (num_rows - row_list_current[0]), end = '') # Aesthetic printing
+
+                # FIXME: Add a section here that checks the max num of digits the list of the bottom row and base 
+                # the num of spaces on that number: ie. if max digits per num in bottom row is 4 (ex. 3432) then
+                # include 4 spaces before single digit numbers, 3 spaces before double digit... etc.
+                
                 for this_num in row_list_current:
                     print(this_num, end = ' ')
                 print()
                 break
-
             row_list_current.append(row_list_former[current_num - 1] + row_list_former[current_num])
         row_list_former = row_list_current
         row_list_current = []
@@ -25,24 +30,9 @@ while user_num != 'q':
     user_num = input('Enter a whole number or enter q to quit:\n')
 
 print('See ya!')
-# Goal Like this for input(8): ****
 
 
-
-
-
-#           1
-#          1 1
-#         1 2 1
-#        1 3 3 1
-#       1 4 6 4 1
-#     1 5 10 10 5 1 
-#   1 6 15 20 15 6 1
-#  1 7 21 35 35 21 7 1
-
-
-
-# Num spaces before line = absolute value(reverse position of list index) - 1
+# Num spaces before line: spaces = num_rows - len(row_list_current)
 #           x [-11] spaces: 10
 #          x x [-10] spaces: 9
 #         x x x [-9] spaces: 8
